@@ -1,7 +1,5 @@
 import Controller from '@ember/controller';
-import Obj from '../models';
 import { tracked } from '@glimmer/tracking';
-import { getOwner } from '@ember/application';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import faker from 'faker';
@@ -9,6 +7,7 @@ import faker from 'faker';
 export default class ApplicationController extends Controller {
     @tracked record;
     @service proxyService;
+    @service classic;
 
     /** COMMENT THIS SECTION TO MAKE THE COMPUTED WORK**/
     /** START  **/
@@ -24,14 +23,6 @@ export default class ApplicationController extends Controller {
         return this.proxyService.arrayProp;
     }
     /** END **/
-
-    constructor(...args) {
-        super(...args);
-        // This simulates a tribal data layer we have
-        this.record = Obj.create({
-            container: getOwner(this),
-        });
-    }
 
     @action
     addToArray() {

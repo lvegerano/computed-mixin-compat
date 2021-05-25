@@ -2,8 +2,8 @@
 
 {{outlet}}
 
-{{!-- this.record.shouldRenderFoo WILL NOT RECOMPUTE UNLESS THE QUERY PARAM IS REMOVED OR notifyPropertyChange is invoked --}}
-<p>Prop: {{this.record.shouldRenderFoo}}</p>
+{{!-- this.classic.shouldRenderFoo WILL NOT RECOMPUTE UNLESS THE QUERY PARAM IS REMOVED OR notifyPropertyChange is invoked --}}
+<p>Prop: {{this.classic.shouldRenderFoo}}</p>
 
 <button type="button" {{on "click" this.addToArray}}>Add to Array</button>
 <button type="button" {{on "click" this.reload}}>Reset</button>
