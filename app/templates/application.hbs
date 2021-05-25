@@ -1,3 +1,9 @@
 <h2 id="title">Welcome to Ember</h2>
 
 {{outlet}}
+
+{{!-- this.record.shouldRenderFoo WILL NOT RECOMPUTE UNLESS THE QUERY PARAM IS REMOVED OR notifyPropertyChange is invoked --}}
+<p>Prop: {{this.record.shouldRenderFoo}}</p>
+
+<button type="button" {{on "click" this.addToArray}}>Add to Array</button>
+<button type="button">Change String</button>
