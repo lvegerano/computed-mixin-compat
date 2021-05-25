@@ -37,4 +37,9 @@ export default class ApplicationController extends Controller {
     addToArray() {
         this.proxyService.pushId(faker.random.alphaNumeric());
     }
+
+    @action
+    reload() {
+        window.location.replace('/')
+    }
 }
